@@ -4,22 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Belén Torres – Coach de Oratoria & Speaker Internacional</title>
-  <meta name="description" content="Belén Torres, entrenadora de speakers, ex coordinadora de coaching en oratoria TEDx y conferencista internacional.">
-  
+  <meta name="description" content="Belén Torres, entrenadora de speakers, ex coordinadora de coaching en oratoria TEDx y conferencista internacional. Talleres, mentorías 1 a 1, Ideantes. Buenos Aires y online.">
+  <meta name="keywords" content="oratoria, coach oratoria, hablar en público, speaker, Belén Torres, Club Oratoria, Ideantes, TEDx, talleres oratoria Argentina">
+  <meta property="og:title" content="Belén Torres – Coach de Oratoria & Speaker Internacional">
+  <meta property="og:description" content="Potenciá tu voz. Hablá con impacto. Talleres, Ideantes y mentorías con Belén Torres.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.club-oratoria.com">
+  <link rel="canonical" href="https://www.club-oratoria.com">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <style>
     :root {
-      --violet-deep: #2A0835; /* Tu color berenjena preferido */
-      --violet-mid: #431255;
+      --violet: #7B2FBE;
+      --violet-mid: #9731E1;
       --violet-light: #C084FC;
       --lime: #BEFF47;
       --yellow: #FFD600;
+      --dark: #0F0A1A;
+      --dark-card: #1A1030;
       --white: #F9F5FF;
       --gray: #9E8FBB;
-      --border: rgba(155,100,255,0.15);
+      --border: rgba(155,100,255,0.2);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,52 +35,241 @@
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background-color: var(--violet-deep);
-      background-image: radial-gradient(circle at top right, rgba(123, 47, 190, 0.2) 0%, transparent 60%);
+      background-color: var(--dark);
       color: var(--white);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* NAV */
+    /* NAV CON LOGO INTEGRADO */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.8rem 4rem; background: rgba(42, 8, 53, 0.9);
-      backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 4rem;
+      background: rgba(15,10,26,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
+    .nav-logo-link { display: flex; align-items: center; text-decoration: none; }
     .nav-logo-img { height: 60px; width: auto; display: block; }
+
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; transition: 0.2s; }
+    .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--lime); }
-    .nav-cta { background: var(--lime) !important; color: #000 !important; padding: 0.5rem 1.2rem !important; border-radius: 100px; font-weight: 700; text-decoration: none; }
+
+    .nav-cta { background: var(--lime) !important; color: var(--dark) !important; padding: 0.5rem 1.2rem !important; border-radius: 100px; }
+    .nav-cta:hover { background: #d4ff70 !important; }
 
     /* HERO */
-    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem; position: relative; }
-    .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.5rem; font-weight: 700; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; max-width: 900px; margin-bottom: 1.5rem; }
-    .hero h1 em { font-style: italic; color: var(--violet-light); font-weight: 400; }
-    .hero-sub { font-size: 1.15rem; color: var(--gray); max-width: 520px; margin-bottom: 2.5rem; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(155,49,225,0.35) 0%, transparent 70%); pointer-events: none; }
+    .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.5rem; font-weight: 500; animation: fadeUp 0.8s ease forwards; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; max-width: 900px; margin-bottom: 1.5rem; animation: fadeUp 0.8s 0.2s ease forwards; opacity: 0; }
+    .hero h1 em { font-style: italic; color: var(--violet-light); }
+    .hero-sub { font-size: 1.15rem; color: var(--gray); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; animation: fadeUp 0.8s 0.4s ease forwards; opacity: 0; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.6s ease forwards; opacity: 0; }
+    .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: var(--lime); color: var(--dark); border-radius: 100px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: transform 0.2s, background 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); background: #d4ff70; }
+    .btn-yellow { display: inline-block; padding: 0.9rem 2rem; background: var(--yellow); color: var(--dark); border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s, opacity 0.2s; }
+    .btn-yellow:hover { transform: translateY(-2px); opacity: 0.9; }
 
-    /* BOTONES */
-    .btn-yellow { display: inline-block; padding: 1rem 2.2rem; background: var(--yellow); color: #000; border-radius: 100px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-    .btn-primary { display: inline-block; padding: 1rem 2.2rem; background: var(--lime); color: #000; border-radius: 100px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-    .btn-yellow:hover, .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-
-    /* SECCIONES */
+    /* SOBRE MÍ CON FOTO INTEGRADA */
     .container { max-width: 1100px; margin: 0 auto; padding: 5rem 4rem; }
-    .section-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 1rem; font-weight: 700; }
-    
+    .section-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 1rem; font-weight: 500; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1.5rem; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 4rem; }
     .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
-    .about-photo img { width: 100%; border-radius: 20px; border: 1px solid var(--border); display: block; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
-    .about-accent { position: absolute; bottom: -1rem; right: -1rem; background: var(--lime); color: #000; padding: 1rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .about-photo { position: relative; }
+    .about-photo img { width: 100%; border-radius: 16px; border: 1px solid var(--border); display: block; }
+    .about-accent { position: absolute; bottom: -1rem; right: -1rem; background: var(--lime); color: var(--dark); padding: 1rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 8px 24px rgba(190,255,71,0.25); }
+    .about-text p { color: var(--gray); margin-bottom: 1.2rem; font-size: 1.05rem; }
+    .credentials { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+    .credential-pill { display: flex; align-items: center; gap: 0.5rem; background: rgba(155,49,225,0.12); border: 1px solid var(--border); border-radius: 100px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--white); }
+    .credential-pill i { color: var(--violet-light); font-size: 0.8rem; }
+    .flags { display: flex; gap: 0.5rem; margin-top: 1.5rem; font-size: 1.6rem; align-items: center; }
+    .flags span { font-size: 0.85rem; color: var(--gray); margin-left: 0.5rem; font-family: 'DM Sans', sans-serif; font-weight: 300; }
 
-    .credential-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 100px; padding: 0.45rem 1rem; font-size: 0.82rem; color: var(--white); margin-right: 0.5rem; margin-bottom: 0.5rem; }
+    /* IDEANTES (MANIFIESTO + ILUSTRACIÓN DE COMUNIDAD) */
+    .ideantes-wrap { background: linear-gradient(135deg, #1A0A2E, #2D1060); padding: 6rem 0; margin-top: 4rem; }
+    .ideantes-inner { max-width: 1100px; margin: 0 auto; padding: 0 4rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+    .ideantes-badge { display: inline-block; background: var(--yellow); color: var(--dark); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 1.2rem; }
+    .ideantes-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; margin-bottom: 1.5rem; }
+    .ideantes-title .highlight { color: var(--yellow); font-style: italic; }
+    .ideantes-manifesto { color: rgba(255,255,255,0.8); font-size: 1.1rem; font-weight: 300; margin-bottom: 2.5rem; border-left: 3px solid rgba(255,214,0,0.3); padding-left: 1.5rem; }
+    .ideantes-points { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .ideantes-point { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,214,0,0.1); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s; }
+    .point-icon { font-size: 1.5rem; color: var(--yellow); margin-bottom: 0.8rem; }
+    .ideantes-point h4 { font-size: 0.95rem; margin-bottom: 0.3rem; font-weight: 700; }
+    .ideantes-point p { font-size: 0.85rem; color: var(--gray); font-weight: 400; line-height: 1.6; }
+    /* ILUSTRACIÓN DE COMUNIDAD AGREGADA */
+    .ideantes-comunidad-img { width: 100%; margin-top: 5rem; border-radius: 20px; display: block; border: 1px solid rgba(255,214,0,0.1); }
 
-    /* IDEANTES */
-    .ideantes-wrap { background: var(--violet-mid); padding: 6rem 0; margin-top: 4rem; border-radius: 40px; margin-inline: 1rem; }
-    .ideantes-inner { max-width: 1100px; margin: 0 auto; padding: 0 4rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
-    .ideantes-manifesto { color: rgba(255,255,255,0.9); font-size: 1.2rem; font-weight: 300; margin-bottom: 2.5rem; border-left: 3px solid var(--yellow); padding-left: 1.5rem; }
-    
-    .ideantes-point { background: rgba(0,0,0,0.
+    /* SERVICIOS REDISEÑADOS (REPARADO Y LIMPIO) */
+    .services-bg { background: var(--dark-card); padding: 6rem 0; margin-top: 4rem; border-radius: 40px 40px 0 0; }
+    .services-inner { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .service-card { background: rgba(155,49,225,0.08); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; transition: 0.3s ease; text-decoration: none; display: flex; flex-direction: column; align-items: flex-start; }
+    .service-card:hover { border-color: var(--violet-light); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(155,49,225,0.15); }
+    .service-icon { width: 56px; height: 56px; background: rgba(155,49,225,0.25); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--violet-light); border: 1px solid rgba(192,132,252,0.3); }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--white); font-weight: 700; }
+    .service-card p { color: var(--gray); font-size: 0.98rem; font-weight: 300; line-height: 1.7; }
+
+    /* FOOTER CON LOGO */
+    footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+    .footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .footer-logo-img { height: 70px; width: auto; display: block; }
+    .footer-copy { font-size: 0.85rem; color: var(--gray); margin-top: 0.2rem; }
+    .social-icons { display: flex; gap: 0.8rem; }
+    .social-icons a { width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gray); font-size: 0.95rem; text-decoration: none; transition: 0.2s; }
+    .social-icons a:hover { border-color: var(--lime); color: var(--lime); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      nav { padding: 0.8rem 1.5rem; }
+      .nav-logo-img { height: 50px; }
+      .nav-links { display: none; }
+      .container { padding: 3rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-accent { position: static; display: inline-block; margin-top: 1rem; }
+      .ideantes-inner { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 3rem; }
+      .ideantes-points { grid-template-columns: 1fr; }
+      .ideantes-comunidad-img { margin-top: 3rem; margin-inline: 1rem; }
+      .services-inner { padding: 0 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-brand { align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo-link">
+      <img src="image_3.png" alt="Club Oratoria - Logo Oficial" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#ideantes">Ideantes</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="mailto:informes@club-oratoria.com" class="nav-cta">Contactame</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" aria-label="Inicio">
+    <p class="hero-eyebrow">Coach de Oratoria · Speaker Internacional · TEDx</p>
+    <h1>Tu voz tiene el poder de <em>cambiar todo</em></h1>
+    <p class="hero-sub">Potenciá tus ideas y comunicá con impacto real. Con Belén Torres, entrenadora de speakers internacional.</p>
+    <div class="hero-actions">
+      <a href="#ideantes" class="btn-yellow">Conocer Ideantes ✦</a>
+      <a href="mailto:informes@club-oratoria.com" class="btn-primary">Quiero empezar →</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <div class="container" id="sobre-mi">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="width_456.jpg" alt="Belén Torres, Coach de Oratoria">
+        <div class="about-accent">
+          🌍 +5 países<br>Speaker internacional
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Sobre mí</p>
+        <h2 class="section-title">Hola, soy <strong>Belén Torres</strong></h2>
+        <p>Soy entrenadora de speakers, <strong>ex coordinadora de coaching en oratoria TEDx</strong> y conferencista internacional.</p>
+        <p>Hablé en escenarios de <strong>Japón, Estados Unidos, Colombia, Nigeria y mi querida Argentina</strong>. Toda esa experiencia la pongo al servicio de Club Oratoria para ayudarte a encontrar y potenciar tu propia voz.</p>
+        <p>Mi misión es que dejes de esperar a que el miedo desaparezca y actúes, porque tu perspectiva única no es un error, es tu mayor ventaja competitiva.</p>
+        <div class="credentials">
+          <span class="credential-pill"><i class="fas fa-check"></i> Ex Coord. TEDx Oratoria</span>
+          <span class="credential-pill"><i class="fas fa-check"></i> Speaker Internacional</span>
+          <span class="credential-pill"><i class="fas fa-microphone"></i> Charlas en Argentina</span>
+        </div>
+        <div class="flags" aria-label="Países donde habló">🇯🇵 🇺🇸 🇨🇴 🇳🇬 🇦🇷 <span>+ Japón, EE.UU., Colombia, Nigeria y Argentina</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ideantes-wrap" id="ideantes" aria-label="Programa Ideantes">
+    <div class="ideantes-inner">
+      <div>
+        <span class="ideantes-badge">Programa estrella Club Oratoria ✦</span>
+        <h2 class="ideantes-title">Ser <span class="highlight">Ideante</span></h2>
+        <p class="ideantes-manifesto">En Ideantes, la vulnerabilidad se convierte en fortaleza porque sabemos que la red nos sostiene. Somos el refugio donde las ideas se incuban y el impulso necesario para que, una vez listas, vuelen sin retorno.</p>
+        <a href="mailto:informes@club-oratoria.com" class="btn-yellow">Quiero ser Ideante →</a>
+      </div>
+      
+      <ul class="ideantes-points">
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-calendar-check"></i></div>
+          <h4>Encuentros Sincrónicos</h4>
+          <p>Nos encontramos en vivo cada 15 días para practicar y recibir feedback real.</p>
+        </li>
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-microphone-alt"></i></div>
+          <h4>Speakers que Motivan</h4>
+          <p>Sesiones con oradoras que te inspiran a pasar a la acción y pulir tu visión.</p>
+        </li>
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-globe-americas"></i></div>
+          <h4>Oradoras Internacionales</h4>
+          <p>Invitadas de todo el mundo que expanden tu perspectiva competitiva.</p>
+        </li>
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-users"></i></div>
+          <h4>Comunidad Activa</h4>
+          <p>Una red de oradoras que te sostiene y abre camino para las que vienen.</p>
+        </li>
+      </ul>
+    </div>
+    <img src="mujeres-unidas.png" alt="Comunidad activa de oradoras unidas" class="ideantes-comunidad-img" style="margin-left:auto; margin-right:auto; max-width: 800px; display:block; padding-left:2rem; padding-right:2rem;">
+  </div>
+
+  <div class="services-bg" id="servicios" aria-label="Servicios">
+    <div class="services-inner">
+      <p class="section-label">¿Cómo puedo ayudarte?</p>
+      <h2 class="section-title" style="margin-bottom: 3rem; color: var(--white);">Servicios</h2>
+      
+      <div class="services-grid">
+        <a href="mailto:informes@club-oratoria.com" class="service-card">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>Talleres grupales</h3>
+          <p>Fortalece tus habilidades en un entorno dinámico de desafío constante.</p>
+        </a>
+        
+        <a href="mailto:informes@club-oratoria.com" class="service-card">
+          <div class="service-icon"><i class="fas fa-user-check"></i></div>
+          <h3>Mentorías 1 a 1</h3>
+          <p>Trabajamos tus discursos o pitches de forma personalizada para dar lo mejor.</p>
+        </a>
+        
+        <a href="mailto:informes@club-oratoria.com" class="service-card">
+          <div class="service-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Mentoría en proyectos</h3>
+          <p>Preparación para TED, pitches corporativos o congresos internacionales.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="image_3.png" alt="Club Oratoria" class="footer-logo-img">
+      <div class="footer-copy">© 2024 · Club Oratoria · Belén Torres</div>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/anahi-belen-torres/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/club_oratoria/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@club_oratoria" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
