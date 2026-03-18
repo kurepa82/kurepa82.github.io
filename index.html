@@ -33,10 +33,9 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
-    /* DEGRADADO DE FONDO SINCRONIZADO CON IMAGE_8.PNG */
     body {
       font-family: 'DM Sans', sans-serif;
-      background: radial-gradient(circle at top right, rgba(118, 41, 191, 0.4) 0%, rgba(15, 10, 26, 1) 100%);
+      background-color: var(--dark);
       color: var(--white);
       line-height: 1.7;
       overflow-x: hidden;
@@ -68,8 +67,9 @@
 
     /* HERO */
     .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(155,49,225,0.35) 0%, transparent 70%); pointer-events: none; }
     .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.5rem; font-weight: 500; animation: fadeUp 0.8s ease forwards; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; max-width: 900px; margin-bottom: 1.5rem; animation: fadeUp 0.8s 0.2s ease forwards; opacity: 0; color: var(--white); }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; max-width: 900px; margin-bottom: 1.5rem; animation: fadeUp 0.8s 0.2s ease forwards; opacity: 0; }
     .hero h1 em { font-style: italic; color: var(--violet-light); }
     .hero-sub { font-size: 1.15rem; color: var(--gray); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; animation: fadeUp 0.8s 0.4s ease forwards; opacity: 0; }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.6s ease forwards; opacity: 0; }
@@ -106,9 +106,10 @@
     .point-icon { font-size: 1.5rem; color: var(--yellow); margin-bottom: 0.8rem; }
     .ideantes-point h4 { font-size: 0.95rem; margin-bottom: 0.3rem; font-weight: 700; }
     .ideantes-point p { font-size: 0.85rem; color: var(--gray); font-weight: 400; line-height: 1.6; }
+    /* ILUSTRACIÓN DE COMUNIDAD AGREGADA */
     .ideantes-comunidad-img { width: 100%; margin-top: 5rem; border-radius: 20px; display: block; border: 1px solid rgba(255,214,0,0.1); }
 
-    /* SERVICIOS REDISEÑADOS */
+    /* SERVICIOS REDISEÑADOS (REPARADO Y LIMPIO) */
     .services-bg { background: var(--dark-card); padding: 6rem 0; margin-top: 4rem; border-radius: 40px 40px 0 0; }
     .services-inner { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
@@ -138,6 +139,7 @@
       .about-accent { position: static; display: inline-block; margin-top: 1rem; }
       .ideantes-inner { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 3rem; }
       .ideantes-points { grid-template-columns: 1fr; }
+      .ideantes-comunidad-img { margin-top: 3rem; margin-inline: 1rem; }
       .services-inner { padding: 0 1.5rem; }
       .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       footer { flex-direction: column; text-align: center; }
@@ -149,7 +151,7 @@
 
   <nav>
     <a href="#" class="nav-logo-link">
-      <img src="ClubOratoria2 (6).jpg" alt="Club Oratoria - Logo Oficial" class="nav-logo-img">
+      <img src="image_3.png" alt="Club Oratoria - Logo Oficial" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -199,4 +201,75 @@
     <div class="ideantes-inner">
       <div>
         <span class="ideantes-badge">Programa estrella Club Oratoria ✦</span>
-        <h2
+        <h2 class="ideantes-title">Ser <span class="highlight">Ideante</span></h2>
+        <p class="ideantes-manifesto">En Ideantes, la vulnerabilidad se convierte en fortaleza porque sabemos que la red nos sostiene. Somos el refugio donde las ideas se incuban y el impulso necesario para que, una vez listas, vuelen sin retorno.</p>
+        <a href="mailto:informes@club-oratoria.com" class="btn-yellow">Quiero ser Ideante →</a>
+      </div>
+      
+      <ul class="ideantes-points">
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-calendar-check"></i></div>
+          <h4>Encuentros Sincrónicos</h4>
+          <p>Nos encontramos en vivo cada 15 días para practicar y recibir feedback real.</p>
+        </li>
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-microphone-alt"></i></div>
+          <h4>Speakers que Motivan</h4>
+          <p>Sesiones con oradoras que te inspiran a pasar a la acción y pulir tu visión.</p>
+        </li>
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-globe-americas"></i></div>
+          <h4>Oradoras Internacionales</h4>
+          <p>Invitadas de todo el mundo que expanden tu perspectiva competitiva.</p>
+        </li>
+        <li class="ideantes-point">
+          <div class="point-icon"><i class="fas fa-users"></i></div>
+          <h4>Comunidad Activa</h4>
+          <p>Una red de oradoras que te sostiene y abre camino para las que vienen.</p>
+        </li>
+      </ul>
+    </div>
+    <img src="mujeres-unidas.png" alt="Comunidad activa de oradoras unidas" class="ideantes-comunidad-img" style="margin-left:auto; margin-right:auto; max-width: 800px; display:block; padding-left:2rem; padding-right:2rem;">
+  </div>
+
+  <div class="services-bg" id="servicios" aria-label="Servicios">
+    <div class="services-inner">
+      <p class="section-label">¿Cómo puedo ayudarte?</p>
+      <h2 class="section-title" style="margin-bottom: 3rem; color: var(--white);">Servicios</h2>
+      
+      <div class="services-grid">
+        <a href="mailto:informes@club-oratoria.com" class="service-card">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>Talleres grupales</h3>
+          <p>Fortalece tus habilidades en un entorno dinámico de desafío constante.</p>
+        </a>
+        
+        <a href="mailto:informes@club-oratoria.com" class="service-card">
+          <div class="service-icon"><i class="fas fa-user-check"></i></div>
+          <h3>Mentorías 1 a 1</h3>
+          <p>Trabajamos tus discursos o pitches de forma personalizada para dar lo mejor.</p>
+        </a>
+        
+        <a href="mailto:informes@club-oratoria.com" class="service-card">
+          <div class="service-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Mentoría en proyectos</h3>
+          <p>Preparación para TED, pitches corporativos o congresos internacionales.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="image_3.png" alt="Club Oratoria" class="footer-logo-img">
+      <div class="footer-copy">© 2024 · Club Oratoria · Belén Torres</div>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/anahi-belen-torres/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/club_oratoria/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@club_oratoria" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
