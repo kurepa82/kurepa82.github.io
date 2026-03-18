@@ -167,7 +167,7 @@
     .divider { border: none; border-top: 1px solid var(--border); margin: 0 4rem; }
     .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
     .about-photo { position: relative; }
-    .about-photo img { width: 100%; border-radius: 16px; border: 1px solid var(--border); display: block; }
+    .about-photo img { width: 100%; height: 500px; object-fit: cover; object-position: center top; border-radius: 16px; border: 1px solid var(--border); display: block; }
     .about-accent { position: absolute; bottom: -1rem; right: -1rem; background: var(--lime); color: var(--dark); padding: 1rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 8px 24px rgba(190,255,71,0.25); }
     .about-text p { color: var(--gray); margin-bottom: 1.2rem; font-size: 1.05rem; }
     .credentials { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
@@ -200,7 +200,7 @@
     .point-icon { font-size: 1.5rem; color: var(--yellow); margin-bottom: 0.8rem; }
     .ideantes-point h3 { font-size: 0.95rem; margin-bottom: 0.3rem; font-weight: 700; }
     .ideantes-point p { font-size: 0.85rem; color: var(--gray); font-weight: 400; line-height: 1.6; }
-    .ideantes-comunidad-img { width: 100%; margin-top: 5rem; border-radius: 20px; display: block; border: 1px solid rgba(255,214,0,0.1); }
+    .ideantes-comunidad-img { width: 100%; max-width: 800px; height: auto; margin-top: 5rem; border-radius: 20px; display: block; border: 1px solid rgba(255,214,0,0.1); object-fit: contain; }
 
     /* TESTIMONIOS */
     .testimonios-wrap { background: linear-gradient(160deg, #120820 0%, #1E0A45 100%); padding: 6rem 0; border-top: 1px solid rgba(155,100,255,0.1); }
@@ -305,7 +305,7 @@
           src="width_456.jpg"
           alt="Belén Torres, coach de oratoria y speaker internacional, Buenos Aires Argentina"
           width="456"
-          height="570"
+          height="auto"
           loading="lazy"
           decoding="async"
         >
